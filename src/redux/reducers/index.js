@@ -1,6 +1,6 @@
-import { combineReducers } from 'redux';
-import news from "./news";
+import { combineReducers } from "redux";
 import errors from "./errors";
+import news from "./news";
 
 const reducer = combineReducers({
   news,

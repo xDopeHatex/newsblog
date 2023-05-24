@@ -7,17 +7,18 @@ const initialState = {
 
 const news = (state = initialState, { type, payload }) => {
   switch (type) {
-    case SET_LATEST_NEWS: 
+    case SET_LATEST_NEWS:
       return {
-        ...state, 
-        latestNews: [...state.latestNews, ...payload],
+        ...state,
+        latestNews: payload,
       };
-    case SET_POPULAR_NEWS: 
+    case SET_POPULAR_NEWS:
       return {
-        ...state, 
-        popularNews: [...state.popularNews, ...payload],
+        ...state,
+        popularNews: payload,
       };
-    default: return state;
+    default:
+      return state;
   }
 };
 
