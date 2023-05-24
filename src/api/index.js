@@ -1,13 +1,9 @@
-export const getLatestNews = async () => {
-  const request = await fetch(
-    `http://hn.algolia.com/api/v1/search?query=foo&tags=story`
-  );
-  return await request.json();
+export const getLatestNews = async (searchQuery) => {
+  const res = await fetch(`https://hn.algolia.com/api/v1/search?query=${searchQuery}&hitsPerPage=10&page=0`);
+  return await res.json();
 };
 
 export const getPopularNews = async () => {
-  const request = await fetch(
-    "http://hn.algolia.com/api/v1/search?query=foo&tags=story"
-  );
-  return await request.json();
+  const res = await fetch(`https://hn.algolia.com/api/v1/search?query=&hitsPerPage=10&page=0`);
+  return await res.json();
 };
